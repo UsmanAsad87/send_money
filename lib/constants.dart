@@ -34,7 +34,7 @@ final kHomeTextStyle = GoogleFonts.englebert(
     color: Colors.black, fontSize: 30.sp, fontWeight: FontWeight.w400);
 final kHomeTextStyle2 = GoogleFonts.englebert(
     color: Colors.black, fontSize: 20.sp, fontWeight: FontWeight.w400);
-final kHomeTextStyle3 = GoogleFonts.englebert(
+final kHomeTextStyle3 = GoogleFonts.poppins(
     color: kPrimaryColor, fontSize: 30.sp, fontWeight: FontWeight.w400);
 final kHomeTextStyle4 = GoogleFonts.englebert(
     color: kPrimaryColor, fontSize: 20.sp, fontWeight: FontWeight.w400);
@@ -44,6 +44,8 @@ final kHomeTextStyle5 = GoogleFonts.englebert(
     fontWeight: FontWeight.w400);
 final kHomeTextStyle6 = GoogleFonts.englebert(
     color: Color(0xFF1E1E1E), fontSize: 18.sp, fontWeight: FontWeight.w400);
+final kHomeTextStyle7 = GoogleFonts.poppins(
+    color: kSecondaryColor, fontSize: 30.sp, fontWeight: FontWeight.w400);
 
 final kDropDownStyle = GoogleFonts.englebert(
     color: Colors.black, fontSize: 30.sp, fontWeight: FontWeight.w400);

@@ -77,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen>
         padding: EdgeInsets.all(8.w),
         child: Container(
             width: MediaQuery.of(context).size.width / 2 - 40,
+
             decoration: BoxDecoration(
               color: tabNames.indexOf(title) == currentIndex
                   ? kPrimaryColor
@@ -96,7 +97,10 @@ class _HomeScreenState extends State<HomeScreen>
                       )
               ],
             ),
-            child: Center(child: Text(title, style: kHomeTextStyle6))),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 5.0),
+              child: Center(child: Text(title, style: kHomeTextStyle6)),
+            )),
       ),
     );
   }

@@ -46,7 +46,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                   children: [
                     Container(
                       padding:
-                          EdgeInsets.only(left: 25.w, top: 35.h, right: 25.w),
+                          EdgeInsets.only(left: 25.w, top:15.h, right: 25.w),
                       height: 158.h,
                       decoration: BoxDecoration(
                         color: kPrimaryColor,
@@ -59,6 +59,7 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
                                 decoration: BoxDecoration(
@@ -89,20 +90,31 @@ class _SendMoneyScreenState extends State<SendMoneyScreen> {
                                     },
                                     items: list1Items),
                               ),
-                              Spacer(),
-                              Text(
-                                '500.00',
-                                style: kHomeTextStyle,
-                              )
+                              SizedBox(
+                                width: 150.w,
+                                child: TextField(
+                                  keyboardType: TextInputType.phone,
+                                  textAlign: TextAlign.right,
+                                  style: kHomeTextStyle7,
+                                  decoration: InputDecoration(
+                                    hintText: "500.00",
+                                    hintStyle: kHomeTextStyle7,
+                                    enabledBorder: InputBorder.none,
+                                    focusedBorder: InputBorder.none,
+                                  ),
+                                  onChanged: (val){},
+                                ),
+                              ),
+
                             ],
                           ),
                           SizedBox(
-                            height: 15.h,
+                            height: 5.h,
                           ),
                           Text(
                             "Balance : 0.004",
                             style: kHomeTextStyle2,
-                          )
+                          ),
                         ],
                       ),
                     ),
