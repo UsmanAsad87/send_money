@@ -24,7 +24,6 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _addController = TextEditingController();
   final TextEditingController _phoneController = TextEditingController();
-  final TextEditingController _cryptoKeyController = TextEditingController();
   final TextEditingController _passConfirmController = TextEditingController();
   GlobalKey<FormState> signUpKey = GlobalKey<FormState>();
   bool _isLoading = false;
@@ -36,7 +35,6 @@ class _SignupScreenState extends State<SignupScreen> {
     _nameController.dispose();
     _addController.dispose();
     _phoneController.dispose();
-    _cryptoKeyController.dispose();
     _passConfirmController.dispose();
     super.dispose();
   }
@@ -147,16 +145,6 @@ class _SignupScreenState extends State<SignupScreen> {
                                   onChanged: (val) {},
                                   onFieldSubmitted: (val) {}),
                               Text(
-                                'Crypto Wallet Key',
-                                style: kHeadingStyle2,
-                              ),
-                              CustomTextField(
-                                  obscure: false,
-                                  controller: _cryptoKeyController,
-                                  hintText: 'Enter your crypto wallet key',
-                                  onChanged: (val) {},
-                                  onFieldSubmitted: (val) {}),
-                              Text(
                                 'Password',
                                 style: kHeadingStyle2,
                               ),
@@ -187,20 +175,12 @@ class _SignupScreenState extends State<SignupScreen> {
                         Center(
                             child: CustomButton(
                                 isLoading: _isLoading,
-                                onPressed: () {
-                                  showToast('Account Created Successfully');
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (_) => LoginScreen()));
-                                }
-                                /* () async {
+                                onPressed: () async {
                                   if (_emailController.text.isEmpty ||
                                       _passController.text.isEmpty ||
                                       _nameController.text.isEmpty ||
                                       _phoneController.text.isEmpty ||
                                       _addController.text.isEmpty ||
-                                      _cryptoKeyController.text.isEmpty ||
                                       _passConfirmController.text.isEmpty) {
                                     showFlagMsg(
                                         context: context,
@@ -227,9 +207,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                         password: _passController.text,
                                         name: _nameController.text,
                                         phoneNumber: _phoneController.text,
-                                        address: _addController.text,
-                                        cryptoWalletKey:
-                                            _cryptoKeyController.text);
+                                        address: _addController.text,);
                                     setState(() {
                                       _isLoading = false;
                                     });
@@ -251,8 +229,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                         msg: 'Required fields are missing',
                                         textColor: Colors.red);
                                   }
-                                },*/
-                                ,
+                                },
                                 buttonText: 'Sign Up')),
                         Padding(
                           padding: EdgeInsets.symmetric(vertical: 10.h),

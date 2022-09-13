@@ -27,7 +27,6 @@ class AuthMethods {
     required String name,
     required String phoneNumber,
     required String address,
-    required String cryptoWalletKey,
   }) async {
     String res = "Some error occurred";
     try {
@@ -37,13 +36,10 @@ class AuthMethods {
       //print(cred.user!.uid);
       UserModel user = UserModel(
           address: address,
-          age: '',
-          cryptoWalletKey: cryptoWalletKey,
+          contact: phoneNumber,
           name: name,
           email: email,
-          uid: cred.user!.uid,
-          profilePic: '',
-          phoneNumber: phoneNumber);
+          uid: cred.user!.uid,);
 
       await _firestore
           .collection('users')
@@ -59,7 +55,7 @@ class AuthMethods {
   Future<String> updateUser(
       {required Uint8List? file,
       required String email,
-      required String age,
+      required String contact,
       required String name,
       required String phoneNumber,
       required String address,
@@ -67,20 +63,13 @@ class AuthMethods {
       required BuildContext context}) async {
     String res = "Some error occurred";
     try {
-      String photoUrl = userdata.profilePic;
-      if (file != null) {
-        photoUrl = await StorageMethods().uploadImageToStorage(file);
-      }
 
       UserModel user = UserModel(
           address: address,
-          age: age,
-          cryptoWalletKey: userdata.cryptoWalletKey,
+          contact: contact,
           name: name,
           email: email,
-          uid: userdata.uid,
-          profilePic: photoUrl,
-          phoneNumber: phoneNumber);
+          uid: userdata.uid,);
 
       await _firestore
           .collection('users')
@@ -162,13 +151,10 @@ class AuthMethods {
           if (userCredential.additionalUserInfo!.isNewUser) {
             UserModel user = UserModel(
                 address: '',
-                age: '',
-                cryptoWalletKey: '',
+                contact: '',
                 name: userCredential.user!.displayName ?? '',
                 email: userCredential.user!.email ?? '',
-                uid: userCredential.user!.uid,
-                profilePic: userCredential.user!.photoURL ?? '',
-                phoneNumber: userCredential.user!.phoneNumber ?? '');
+                uid: userCredential.user!.uid,);
 
             await _firestore
                 .collection('users')

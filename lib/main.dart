@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Cash Driver',
+            title: 'Send Money',
             theme: ThemeData(
               primarySwatch: Colors.brown,
             ),

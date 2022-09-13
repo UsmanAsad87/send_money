@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "157934183280",
+    "project_id": "sendmoney-25e0a",
+    "storage_bucket": "sendmoney-25e0a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157934183280:android:61440712f3185170bfe5b5",
+        "android_client_info": {
+          "package_name": "com.example.send_money"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "157934183280-ktq74r6uoak11mbmaslf2d2rbc6t0jlg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFAjTt9dJVCGItbdCEJwjY5eqITf79efI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "157934183280-ktq74r6uoak11mbmaslf2d2rbc6t0jlg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
